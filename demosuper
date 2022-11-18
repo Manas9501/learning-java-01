@@ -1,0 +1,84 @@
+class BOX {
+    private double width;
+    private double height;
+    private double deepth;
+    BOX(BOX ob)
+    {
+    width = ob.width;
+    height = ob.height;
+    deepth = ob.deepth;
+}
+    BOX(double w, double h , double d){
+        width = w;
+        height = h ;
+        deepth = d ;
+        
+    }
+    BOX (){
+        width = -1 ;
+        height = -1  ;
+        deepth = -1 ;
+        
+    }
+    BOX (double len){
+    width= height= deepth =len;
+}
+double volume()
+{
+    return width*height*deepth;
+}
+}
+class BoxWeight extends BOX{
+    double weight;
+    BoxWeight(BoxWeight ob){
+        super(ob);
+        weight= ob.weight;
+        
+        
+    }
+    BoxWeight(double m ,double w, double h, double d){
+        super(w,h,d);
+        weight= m;
+    }
+    BoxWeight(){
+        super();
+        weight =-1;
+    }
+    BoxWeight(double m ,double len){
+        super (len);
+        weight= m;
+    
+}
+    
+}
+class Main{
+    public static void main(String args[]){
+        BoxWeight mybox1 = new BoxWeight(10,20,15,34.3);
+        BoxWeight mybox2 = new BoxWeight(2,3,4,0.076);
+        BoxWeight mybox3 = new BoxWeight();
+        BoxWeight mycube = new BoxWeight(3,2);
+        BoxWeight myclone = new BoxWeight(mybox1);
+        double vol;
+        vol=mybox1.volume();
+        System.out.println("volume of mybox1 is :"+vol);
+        System.out.println("weight of mybox1 is :"+mybox1.weight);
+        System.out.println();
+        vol=mybox2.volume();
+        System.out.println("volume of mybox2 is :"+vol);
+        System.out.println("volume of mybox2 is :"+mybox2.weight );
+        System.out.println();
+         vol=mybox3.volume();
+        System.out.println("volume of mybox3is :"+vol);
+        System.out.println("volume of mybox3 is :"+mybox3.weight );
+        System.out.println();
+         vol=myclone.volume();
+        System.out.println("volume of myclone is :"+vol);
+        System.out.println("volume of myclone is :"+myclone.weight );
+        System.out.println();
+         vol=mycube.volume();
+        System.out.println("volume of mycube is :"+vol);
+        System.out.println("volume of mycube is :"+mycube.weight );
+        System.out.println();
+        
+    }
+}
