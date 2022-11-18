@@ -1,0 +1,21 @@
+class A{
+    int i ;
+}
+class B extends A{
+    int i;
+    B(int a , int b){
+        super.i = a;//in A
+        i=b;// in B
+    }
+    void show(){
+        System.out.print("i in super class:"+super.i);
+        System.out.print("i in sub class:"+i);
+    }
+}
+class UseSpuer{
+    public static void main(String args[])
+    {
+        B subOb= new B(1,2);
+        subOb.show();
+    }
+}
